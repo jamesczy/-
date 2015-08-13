@@ -82,6 +82,7 @@
 		98ED76A11B5FA50D0020337A /* JCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED76A01B5FA50D0020337A /* JCTabBar.m */; };
 		BFFF898C1B7C4FA4003EFC67 /* JCStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF89891B7C4FA4003EFC67 /* JCStatusPhotosView.m */; };
 		BFFF898D1B7C4FA4003EFC67 /* JCStatusPhotoVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF898B1B7C4FA4003EFC67 /* JCStatusPhotoVIew.m */; };
+		BFFF89901B7C6742003EFC67 /* JCIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF898F1B7C6742003EFC67 /* JCIconView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +238,8 @@
 		BFFF89891B7C4FA4003EFC67 /* JCStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCStatusPhotosView.m; sourceTree = "<group>"; };
 		BFFF898A1B7C4FA4003EFC67 /* JCStatusPhotoVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCStatusPhotoVIew.h; sourceTree = "<group>"; };
 		BFFF898B1B7C4FA4003EFC67 /* JCStatusPhotoVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCStatusPhotoVIew.m; sourceTree = "<group>"; };
+		BFFF898E1B7C6742003EFC67 /* JCIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCIconView.h; sourceTree = "<group>"; };
+		BFFF898F1B7C6742003EFC67 /* JCIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCIconView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +462,8 @@
 				98AF61F11B59203500C63EF2 /* JCDropdownMenu.m */,
 				98ED769F1B5FA50D0020337A /* JCTabBar.h */,
 				98ED76A01B5FA50D0020337A /* JCTabBar.m */,
+				BFFF898E1B7C6742003EFC67 /* JCIconView.h */,
+				BFFF898F1B7C6742003EFC67 /* JCIconView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -759,6 +764,7 @@
 				987261EA1B56855F00F5D265 /* AFNetworkReachabilityManager.m in Sources */,
 				98625F7E1B5CD34000DAF8BA /* JCTitleMenuViewController.m in Sources */,
 				98C429D11B5156CD00DC1E49 /* main.m in Sources */,
+				BFFF89901B7C6742003EFC67 /* JCIconView.m in Sources */,
 				988019831B6911AE00346D91 /* SDWebImageManager.m in Sources */,
 				987261F41B56AB5B00F5D265 /* JCOAuthViewController.m in Sources */,
 				9880197C1B6911AE00346D91 /* MKAnnotationView+WebCache.m in Sources */,

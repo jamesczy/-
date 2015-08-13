@@ -7,6 +7,16 @@
 //用户模型
 
 #import <Foundation/Foundation.h>
+typedef enum{
+    JCUserVerifiedTypeNone = -1,//没有认证
+    JCUserVerifiedPersonal = 0, //个人认证
+    JCUserVerifiedOrgEnterprice = 2,//企业官方
+    JCUserVerifiedOrgMedia = 3,//媒体官方
+    JCUserVerifiedOrgWebsite = 5,//网站官方
+    
+    JCUserVerifiedDaren = 220//微博达人
+}JCUserVerifiedType;
+
 
 @interface JCUser : NSObject
 @property (nonatomic,copy) NSString * idstr;
@@ -18,4 +28,6 @@
 /** 会员等级 */
 @property (nonatomic, assign) int mbrank;
 @property (nonatomic, assign, getter = isVip) BOOL vip;
+/** 认证的类型  */
+@property (nonatomic ,assign)JCUserVerifiedType verified_type;
 @end

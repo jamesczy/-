@@ -11,7 +11,7 @@
 #import "JCStatusPhotoVIew.h"
 #import "UIView+Extension.h"
 
-#define JCStatusPhotoWH  70
+#define JCStatusPhotoWH  90
 #define JCStatusPhotoMargin 10
 #define JCStatusPhotoMaxCol(count) ((count == 4)? 2 : 3)
 
