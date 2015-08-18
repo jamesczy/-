@@ -80,9 +80,12 @@
 		98D28E521B76163B00D1DB2F /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D28E511B76163B00D1DB2F /* NSString+Extension.m */; };
 		98EA3FD01B57D3E700E95ECB /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EA3FCF1B57D3E700E95ECB /* UIWindow+Extension.m */; };
 		98ED76A11B5FA50D0020337A /* JCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED76A01B5FA50D0020337A /* JCTabBar.m */; };
+		BFB4AEA41B816F6300ECECB2 /* JCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB4AEA31B816F6300ECECB2 /* JCTextView.m */; };
+		BFB4AEA81B81792C00ECECB2 /* JCComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB4AEA71B81792C00ECECB2 /* JCComposeView.m */; };
 		BFFF898C1B7C4FA4003EFC67 /* JCStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF89891B7C4FA4003EFC67 /* JCStatusPhotosView.m */; };
 		BFFF898D1B7C4FA4003EFC67 /* JCStatusPhotoVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF898B1B7C4FA4003EFC67 /* JCStatusPhotoVIew.m */; };
 		BFFF89901B7C6742003EFC67 /* JCIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF898F1B7C6742003EFC67 /* JCIconView.m */; };
+		BFFF89951B7DBF7F003EFC67 /* JCComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFF89941B7DBF7F003EFC67 /* JCComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,12 +237,18 @@
 		98EA3FCF1B57D3E700E95ECB /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		98ED769F1B5FA50D0020337A /* JCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCTabBar.h; sourceTree = "<group>"; };
 		98ED76A01B5FA50D0020337A /* JCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCTabBar.m; sourceTree = "<group>"; };
+		BFB4AEA21B816F6300ECECB2 /* JCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCTextView.h; sourceTree = "<group>"; };
+		BFB4AEA31B816F6300ECECB2 /* JCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCTextView.m; sourceTree = "<group>"; };
+		BFB4AEA61B81792C00ECECB2 /* JCComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCComposeView.h; sourceTree = "<group>"; };
+		BFB4AEA71B81792C00ECECB2 /* JCComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCComposeView.m; sourceTree = "<group>"; };
 		BFFF89881B7C4FA4003EFC67 /* JCStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCStatusPhotosView.h; sourceTree = "<group>"; };
 		BFFF89891B7C4FA4003EFC67 /* JCStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCStatusPhotosView.m; sourceTree = "<group>"; };
 		BFFF898A1B7C4FA4003EFC67 /* JCStatusPhotoVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCStatusPhotoVIew.h; sourceTree = "<group>"; };
 		BFFF898B1B7C4FA4003EFC67 /* JCStatusPhotoVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCStatusPhotoVIew.m; sourceTree = "<group>"; };
 		BFFF898E1B7C6742003EFC67 /* JCIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCIconView.h; sourceTree = "<group>"; };
 		BFFF898F1B7C6742003EFC67 /* JCIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCIconView.m; sourceTree = "<group>"; };
+		BFFF89931B7DBF7F003EFC67 /* JCComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCComposeViewController.h; sourceTree = "<group>"; };
+		BFFF89941B7DBF7F003EFC67 /* JCComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCComposeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +473,8 @@
 				98ED76A01B5FA50D0020337A /* JCTabBar.m */,
 				BFFF898E1B7C6742003EFC67 /* JCIconView.h */,
 				BFFF898F1B7C6742003EFC67 /* JCIconView.m */,
+				BFB4AEA21B816F6300ECECB2 /* JCTextView.h */,
+				BFB4AEA31B816F6300ECECB2 /* JCTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,6 +586,7 @@
 		98C429C81B5156CD00DC1E49 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BFFF89911B7DBF44003EFC67 /* Compose */,
 				98AF61DE1B58AF3400C63EF2 /* Discover */,
 				98AF61E21B58AF3400C63EF2 /* Message */,
 				98AF61E61B58AF3400C63EF2 /* Profile */,
@@ -669,6 +681,33 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		BFB4AEA51B8178EF00ECECB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFB4AEA61B81792C00ECECB2 /* JCComposeView.h */,
+				BFB4AEA71B81792C00ECECB2 /* JCComposeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFFF89911B7DBF44003EFC67 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				BFB4AEA51B8178EF00ECECB2 /* View */,
+				BFFF89921B7DBF44003EFC67 /* Controller */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		BFFF89921B7DBF44003EFC67 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFFF89931B7DBF7F003EFC67 /* JCComposeViewController.h */,
+				BFFF89941B7DBF7F003EFC67 /* JCComposeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -748,10 +787,12 @@
 				9880197A1B6911AE00346D91 /* NSObject+MJKeyValue.m in Sources */,
 				988019791B6911AE00346D91 /* NSObject+MJCoding.m in Sources */,
 				987261EC1B56855F00F5D265 /* AFURLConnectionOperation.m in Sources */,
+				BFFF89951B7DBF7F003EFC67 /* JCComposeViewController.m in Sources */,
 				9816DC251B6C743A00A04734 /* JCLoadMoreFoot.m in Sources */,
 				9816DC2A1B6F52CB00A04734 /* JCStatusCell.m in Sources */,
 				988019751B6911AE00346D91 /* MJMember.m in Sources */,
 				98AF61EC1B58AF3400C63EF2 /* JCProfileViewController.m in Sources */,
+				BFB4AEA81B81792C00ECECB2 /* JCComposeView.m in Sources */,
 				988019851B6911AE00346D91 /* UIButton+WebCache.m in Sources */,
 				98D28E521B76163B00D1DB2F /* NSString+Extension.m in Sources */,
 				987261E81B56855F00F5D265 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -789,6 +830,7 @@
 				98AF61D91B58969200C63EF2 /* Foundation+Log.m in Sources */,
 				98EA3FD01B57D3E700E95ECB /* UIWindow+Extension.m in Sources */,
 				9883C8711B74BEFA00B86F0A /* NSDate+Extension.m in Sources */,
+				BFB4AEA41B816F6300ECECB2 /* JCTextView.m in Sources */,
 				988019871B6911AE00346D91 /* UIImage+MultiFormat.m in Sources */,
 				988019861B6911AE00346D91 /* UIImage+GIF.m in Sources */,
 				986D2A211B540F49009C8B03 /* JCNewFeatrueViewController.m in Sources */,

@@ -86,7 +86,7 @@
     params[@"grant_type"] = @"authorization_code";
     params[@"redirect_uri"] = @"http://";
     params[@"code"] = code;
-    NSLog(@"@%s",code);
+//    NSLog(@"@%s",code);
     //3.发送请求
     [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         [MBProgressHUD hideHUD];

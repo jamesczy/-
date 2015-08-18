@@ -14,7 +14,7 @@
 #import "JCProfileViewController.h"
 #import "JCNavigationController.h"
 #import "JCTabBar.h"
-#import "JCViewController.h"
+#import "JCComposeViewController.h"
 
 @interface JCTabBarViewController ()<JCTabBarDelegate>
 
@@ -72,9 +72,10 @@
 #pragma mark -JCtabBar的代理
 -(void)tababBarDidClickPlusButton:(JCTabBar *)tabBar
 {
-    JCViewController *vc = [[JCViewController alloc]init];
-    vc.view.backgroundColor = [UIColor yellowColor];
-    [self presentViewController:vc animated:YES completion:nil];
+    JCComposeViewController *vc = [[JCComposeViewController alloc]init];
+    JCNavigationController *nav = [[JCNavigationController alloc]initWithRootViewController:vc];
+//    vc.view.backgroundColor = [UIColor yellowColor];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end
