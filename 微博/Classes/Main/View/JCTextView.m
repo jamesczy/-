@@ -18,7 +18,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
     }
     return self;
 }
@@ -26,6 +26,42 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+- (void)textDidChange
+{
+    // 重绘（重新调用）
+    [self setNeedsDisplay];
+}
+
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    _placeholder = [placeholder copy];
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setPlaceholderColor:(UIColor *)placeholderColor
+{
+    _placeholderColor = placeholderColor;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    
+    // setNeedsDisplay会在下一个消息循环时刻，调用drawRect:
+    [self setNeedsDisplay];
+}
+
+- (void)setFont:(UIFont *)font
+{
+    [super setFont:font];
+    
+    [self setNeedsDisplay];
+}
+
+
 -(void)drawRect:(CGRect)rect
 {
     if (self.hasText) return;

@@ -27,12 +27,12 @@
     //设置普通状态
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
     textAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:14];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     //设置不可用状态
     NSMutableDictionary *disableTextAttrs = [NSMutableDictionary dictionary];
     disableTextAttrs[NSForegroundColorAttributeName] = [UIColor grayColor];
-    disableTextAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+    disableTextAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:14];
     [item setTitleTextAttributes:disableTextAttrs forState:UIControlStateDisabled];
 }
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated

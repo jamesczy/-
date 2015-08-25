@@ -8,13 +8,20 @@
 
 #import <UIKit/UIKit.h>
 typedef enum {
-    JCComposeToolbarButtonTypeCamer,//拍照
+    JCComposeToolbarButtonTypeCamera,//拍照
     JCComposeToolbarButtonTypePicture,//相册
     JCComposeToolbarButtonTypeMention,//@
     JCComposeToolbarButtonTypeTrend,//#
     JCComposeToolbarButtonTypeEmotion //表情
 }JCComposeToolbarButtonType;
+@class JCComposeView;
+
+@protocol JCComposeViewDelegate <NSObject>
+
+@optional
+-(void)composeView:(JCComposeView *)composeView didClickButton:(JCComposeToolbarButtonType)buttonType;
+@end
 
 @interface JCComposeView : UIView
-
+@property (nonatomic ,weak) id<JCComposeViewDelegate> delegate;
 @end
