@@ -35,9 +35,9 @@
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
     [self addSubview:btn];
     // 选中“默认”按钮
-    if (buttonType == JCEmotionTabbarButtonTypeDefault) {
-        [self btnClick:btn];
-    }
+//    if (buttonType == JCEmotionTabbarButtonTypeDefault) {
+//        [self btnClick:btn];
+//    }
     
     // 设置背景图片
     NSString *image = @"compose_emotion_table_mid_normal";
@@ -70,6 +70,12 @@
         btn.x = i * btnW;
         btn.height = btnH;
     }
+}
+-(void)setDelegate:(id<JCEmotionTabBarDelegate>)delegate
+{
+    _delegate = delegate;
+    //设置代理选中默认按钮
+    [self btnClick:(JCEmotionTabbarButton *)[self viewWithTag:JCEmotionTabbarButtonTypeDefault]];
 }
 
 -(void)btnClick:(JCEmotionTabbarButton *)btn

@@ -8,6 +8,10 @@
 
 #import "JCComposeView.h"
 #import "UIView+Extension.h"
+@interface JCComposeView()
+
+@property (nonatomic ,weak)UIButton *emotionButton;
+@end
 
 @implementation JCComposeView
 
@@ -42,7 +46,25 @@
         [self.delegate composeView:self didClickButton:(JCComposeToolbarButtonType)btn.tag];
     }
 }
+- (void)setShowKeyboardButton:(BOOL)showKeyboardButton
+{
+    _showKeyboardButton = showKeyboardButton;
+    
+//    // 默认的图片名
+    NSString *image = @"compose_emoticonbutton_background";
+    NSString *highImage = @"compose_emoticonbutton_background_highlighted";
+//
+    // 显示键盘图标
+    if (showKeyboardButton) {
+        image = @"compose_keyboardbutton_background";
+        highImage = @"compose_keyboardbutton_background_highlighted";
+        
+    }
 
+    // 设置图片
+    [self.emotionButton setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+    [self.emotionButton setImage:[UIImage imageNamed:highImage] forState:UIControlStateHighlighted];
+}
 -(void)layoutSubviews
 {
     [super layoutSubviews];

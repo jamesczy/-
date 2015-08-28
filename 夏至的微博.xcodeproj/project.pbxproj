@@ -81,6 +81,13 @@
 		98EA3FD01B57D3E700E95ECB /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EA3FCF1B57D3E700E95ECB /* UIWindow+Extension.m */; };
 		98ED76A11B5FA50D0020337A /* JCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED76A01B5FA50D0020337A /* JCTabBar.m */; };
 		BF1A276C1B8C4D230051A048 /* JCEmotionTabbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A276B1B8C4D230051A048 /* JCEmotionTabbarButton.m */; };
+		BF1A27701B8D94180051A048 /* JCEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A276F1B8D94180051A048 /* JCEmotion.m */; };
+		BF1A27721B8D99FE0051A048 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = BF1A27711B8D99FE0051A048 /* EmotionIcons */; };
+		BF1A27751B8ED5C50051A048 /* JCEmotionPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A27741B8ED5C50051A048 /* JCEmotionPageView.m */; };
+		BF1A27781B8ED7B20051A048 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A27771B8ED7B20051A048 /* NSString+Emoji.m */; };
+		BFA660B61B900E93002B7FF8 /* JCEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA660B51B900E93002B7FF8 /* JCEmotionPopView.m */; };
+		BFA660B81B901058002B7FF8 /* JCEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA660B71B901058002B7FF8 /* JCEmotionPopView.xib */; };
+		BFA660BB1B904272002B7FF8 /* JCEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA660BA1B904272002B7FF8 /* JCEmotionButton.m */; };
 		BFB4AEA41B816F6300ECECB2 /* JCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB4AEA31B816F6300ECECB2 /* JCTextView.m */; };
 		BFB4AEA81B81792C00ECECB2 /* JCComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB4AEA71B81792C00ECECB2 /* JCComposeView.m */; };
 		BFB4AEB81B8B15B000ECECB2 /* JCComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB4AEB71B8B15B000ECECB2 /* JCComposePhotosView.m */; };
@@ -244,6 +251,18 @@
 		98ED76A01B5FA50D0020337A /* JCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCTabBar.m; sourceTree = "<group>"; };
 		BF1A276A1B8C4D230051A048 /* JCEmotionTabbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCEmotionTabbarButton.h; sourceTree = "<group>"; };
 		BF1A276B1B8C4D230051A048 /* JCEmotionTabbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCEmotionTabbarButton.m; sourceTree = "<group>"; };
+		BF1A276E1B8D94180051A048 /* JCEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCEmotion.h; sourceTree = "<group>"; };
+		BF1A276F1B8D94180051A048 /* JCEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCEmotion.m; sourceTree = "<group>"; };
+		BF1A27711B8D99FE0051A048 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		BF1A27731B8ED5C50051A048 /* JCEmotionPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCEmotionPageView.h; sourceTree = "<group>"; };
+		BF1A27741B8ED5C50051A048 /* JCEmotionPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCEmotionPageView.m; sourceTree = "<group>"; };
+		BF1A27761B8ED7B20051A048 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		BF1A27771B8ED7B20051A048 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		BFA660B41B900E93002B7FF8 /* JCEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCEmotionPopView.h; sourceTree = "<group>"; };
+		BFA660B51B900E93002B7FF8 /* JCEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCEmotionPopView.m; sourceTree = "<group>"; };
+		BFA660B71B901058002B7FF8 /* JCEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCEmotionPopView.xib; sourceTree = "<group>"; };
+		BFA660B91B904272002B7FF8 /* JCEmotionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCEmotionButton.h; sourceTree = "<group>"; };
+		BFA660BA1B904272002B7FF8 /* JCEmotionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCEmotionButton.m; sourceTree = "<group>"; };
 		BFB4AEA21B816F6300ECECB2 /* JCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCTextView.h; sourceTree = "<group>"; };
 		BFB4AEA31B816F6300ECECB2 /* JCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCTextView.m; sourceTree = "<group>"; };
 		BFB4AEA61B81792C00ECECB2 /* JCComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCComposeView.h; sourceTree = "<group>"; };
@@ -574,6 +593,7 @@
 		98C4299E1B5155B300DC1E49 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF1A27711B8D99FE0051A048 /* EmotionIcons */,
 				98C429AD1B5155B300DC1E49 /* LaunchScreen.xib */,
 				98C429AB1B5155B300DC1E49 /* Images.xcassets */,
 				98C4299F1B5155B300DC1E49 /* Info.plist */,
@@ -683,6 +703,8 @@
 		98EA3FCD1B57D36F00E95ECB /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BF1A27761B8ED7B20051A048 /* NSString+Emoji.h */,
+				BF1A27771B8ED7B20051A048 /* NSString+Emoji.m */,
 				98AF61ED1B58AF5A00C63EF2 /* UIView+Extension.h */,
 				98AF61EE1B58AF5A00C63EF2 /* UIView+Extension.m */,
 				98AF61D81B58969200C63EF2 /* Foundation+Log.m */,
@@ -694,6 +716,15 @@
 				98D28E511B76163B00D1DB2F /* NSString+Extension.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		BF1A276D1B8D93C50051A048 /* Modle */ = {
+			isa = PBXGroup;
+			children = (
+				BF1A276E1B8D94180051A048 /* JCEmotion.h */,
+				BF1A276F1B8D94180051A048 /* JCEmotion.m */,
+			);
+			path = Modle;
 			sourceTree = "<group>";
 		};
 		BFB4AEA51B8178EF00ECECB2 /* View */ = {
@@ -711,6 +742,13 @@
 				BFB4AEC01B8C3F5600ECECB2 /* JCEmotionListView.m */,
 				BF1A276A1B8C4D230051A048 /* JCEmotionTabbarButton.h */,
 				BF1A276B1B8C4D230051A048 /* JCEmotionTabbarButton.m */,
+				BF1A27731B8ED5C50051A048 /* JCEmotionPageView.h */,
+				BF1A27741B8ED5C50051A048 /* JCEmotionPageView.m */,
+				BFA660B41B900E93002B7FF8 /* JCEmotionPopView.h */,
+				BFA660B51B900E93002B7FF8 /* JCEmotionPopView.m */,
+				BFA660B71B901058002B7FF8 /* JCEmotionPopView.xib */,
+				BFA660B91B904272002B7FF8 /* JCEmotionButton.h */,
+				BFA660BA1B904272002B7FF8 /* JCEmotionButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -718,6 +756,7 @@
 		BFFF89911B7DBF44003EFC67 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				BF1A276D1B8D93C50051A048 /* Modle */,
 				BFB4AEA51B8178EF00ECECB2 /* View */,
 				BFFF89921B7DBF44003EFC67 /* Controller */,
 			);
@@ -790,8 +829,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1A27721B8D99FE0051A048 /* EmotionIcons in Resources */,
 				9816DC271B6C744800A04734 /* JCLoadMoreFoot.xib in Resources */,
 				98C429AF1B5155B300DC1E49 /* LaunchScreen.xib in Resources */,
+				BFA660B81B901058002B7FF8 /* JCEmotionPopView.xib in Resources */,
 				98C429AC1B5155B300DC1E49 /* Images.xcassets in Resources */,
 				987261FF1B56B2B300F5D265 /* MBProgressHUD.bundle in Resources */,
 			);
@@ -812,6 +853,7 @@
 				987261EF1B56855F00F5D265 /* AFURLSessionManager.m in Sources */,
 				9880197A1B6911AE00346D91 /* NSObject+MJKeyValue.m in Sources */,
 				988019791B6911AE00346D91 /* NSObject+MJCoding.m in Sources */,
+				BF1A27701B8D94180051A048 /* JCEmotion.m in Sources */,
 				987261EC1B56855F00F5D265 /* AFURLConnectionOperation.m in Sources */,
 				BFFF89951B7DBF7F003EFC67 /* JCComposeViewController.m in Sources */,
 				9816DC251B6C743A00A04734 /* JCLoadMoreFoot.m in Sources */,
@@ -824,6 +866,7 @@
 				987261E81B56855F00F5D265 /* AFHTTPRequestOperationManager.m in Sources */,
 				9880197D1B6911AE00346D91 /* NSData+ImageContentType.m in Sources */,
 				988019801B6911AE00346D91 /* SDWebImageDecoder.m in Sources */,
+				BFA660BB1B904272002B7FF8 /* JCEmotionButton.m in Sources */,
 				987262001B56B2B300F5D265 /* MBProgressHUD.m in Sources */,
 				987877591B71F4B6003866C1 /* JCPhoto.m in Sources */,
 				987877551B71BC00003866C1 /* JCStatuses.m in Sources */,
@@ -838,6 +881,7 @@
 				9880197C1B6911AE00346D91 /* MKAnnotationView+WebCache.m in Sources */,
 				987262041B57312900F5D265 /* JCAccountTool.m in Sources */,
 				9880197F1B6911AE00346D91 /* SDWebImageCompat.m in Sources */,
+				BFA660B61B900E93002B7FF8 /* JCEmotionPopView.m in Sources */,
 				9880197E1B6911AE00346D91 /* SDImageCache.m in Sources */,
 				988019771B6911AE00346D91 /* MJType.m in Sources */,
 				BFFF898D1B7C4FA4003EFC67 /* JCStatusPhotoVIew.m in Sources */,
@@ -848,6 +892,7 @@
 				98ED76A11B5FA50D0020337A /* JCTabBar.m in Sources */,
 				9880198A1B6911AE00346D91 /* UIImageView+WebCache.m in Sources */,
 				98AF61DD1B58AB9F00C63EF2 /* JCSearchBar.m in Sources */,
+				BF1A27781B8ED7B20051A048 /* NSString+Emoji.m in Sources */,
 				988019761B6911AE00346D91 /* MJMethod.m in Sources */,
 				9816DC2D1B6F5C3700A04734 /* JCStatusFrame.m in Sources */,
 				987877561B71BC00003866C1 /* JCUser.m in Sources */,
@@ -861,6 +906,7 @@
 				BFB4AEA41B816F6300ECECB2 /* JCTextView.m in Sources */,
 				988019871B6911AE00346D91 /* UIImage+MultiFormat.m in Sources */,
 				988019861B6911AE00346D91 /* UIImage+GIF.m in Sources */,
+				BF1A27751B8ED5C50051A048 /* JCEmotionPageView.m in Sources */,
 				986D2A211B540F49009C8B03 /* JCNewFeatrueViewController.m in Sources */,
 				987261EB1B56855F00F5D265 /* AFSecurityPolicy.m in Sources */,
 				98AF61F21B59203500C63EF2 /* JCDropdownMenu.m in Sources */,

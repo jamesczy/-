@@ -22,4 +22,8 @@
 //随机色
 #define JCRandomColor JCColor(arc4random_uniform(256), arc4random_uniform(256),arc4random_uniform(256))
 
+//表器按钮被选中的通知
+#define JCEmotionDidSelectNotification @"JCEmotionDidSelectNotification"
+#define JCSelectEmotionKey @"JCSelectEmotionKey"
+
 #endif

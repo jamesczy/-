@@ -24,4 +24,6 @@ typedef enum {
 
 @interface JCComposeView : UIView
 @property (nonatomic ,weak) id<JCComposeViewDelegate> delegate;
+/** 是否要显示键盘按钮  */
+@property (nonatomic, assign) BOOL showKeyboardButton;
 @end

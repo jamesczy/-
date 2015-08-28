@@ -17,6 +17,9 @@
 #import "AFNetworking.h"
 #import "JCComposePhotosView.h"
 #import "JCEmotionKeyboard.h"
+#import "JCConst.h"
+#import "JCEmotion.h"
+#import "NSString+Emoji.h"
 
 @interface JCComposeViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate,JCComposeViewDelegate>
 @property (nonatomic, weak) JCTextView *textView;
@@ -65,8 +68,10 @@
     [self.view addSubview:textView];
     self.textView = textView;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:textView];
-    
+    //接受键盘改变的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    //接受表情键盘点击的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidSelect:) name:JCEmotionDidSelectNotification object:nil];
 }
 //设置导航栏
 -(void)setnavUp
@@ -107,7 +112,6 @@
     toolbar.x = 0;
     toolbar.delegate =self;
     [self.view addSubview:toolbar];
-    NSLog(@"toolbar.frame :%@",NSStringFromCGRect(toolbar.frame));
     self.toolbar = toolbar;
 }
 -(void)setupPhotoView
@@ -121,6 +125,17 @@
     self.photosView = photoView;
 }
 #pragma mark - 监听方法
+
+-(void)emotionDidSelect:(NSNotification *)notification
+{
+    JCEmotion *emotion = notification.userInfo[JCSelectEmotionKey];
+//    NSLog(@"%@ 被点中了",emotion.chs);
+    if (emotion.code) {
+        [self.textView insertText:emotion.code.emoji];
+    }else if(emotion.png){
+        
+    }
+}
 -(void)concle
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -186,7 +201,7 @@
 }
 -(void)keyboardWillChangeFrame:(NSNotification *)notification
 {
-//    if (self.switchingKeyboard) return ;
+    if (self.switchingKeyboard) return ;
     
     NSDictionary *userInfo = notification.userInfo;
     //动画执行的时间
@@ -201,7 +216,7 @@
         }else{
             self.toolbar.y = keyboardF.origin.y - self.toolbar.height;
         }
-        NSLog(@"%@",NSStringFromCGRect(self.toolbar.frame));
+
     }];
 }
 - (void)textDidChange
@@ -239,8 +254,10 @@
     if (self.textView.inputView == nil) {
         
         self.textView.inputView = self.emotionKeyboard;
+        self.toolbar.showKeyboardButton = YES;
     }else{
         self.textView.inputView = nil;
+        self.toolbar.showKeyboardButton = NO;
     }
     self.switchingKeyboard = YES;
     [self.textView endEditing:NO];
