@@ -20,9 +20,10 @@
 #import "JCConst.h"
 #import "JCEmotion.h"
 #import "NSString+Emoji.h"
+#import "JCEmotionTextView.h"
 
-@interface JCComposeViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate,JCComposeViewDelegate>
-@property (nonatomic, weak) JCTextView *textView;
+@interface JCComposeViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate,JCComposeViewDelegate,UITextViewDelegate>
+@property (nonatomic, weak) JCEmotionTextView *textView;
 @property (nonatomic ,weak)JCComposeView *toolbar;
 /** 相册（存放拍照或者相册中选择的图片） */
 @property (nonatomic, weak) JCComposePhotosView *photosView;
@@ -60,7 +61,7 @@
 }
 -(void)setTextView
 {
-    JCTextView *textView = [[JCTextView alloc]init];
+    JCEmotionTextView *textView = [[JCEmotionTextView alloc]init];
     textView.alwaysBounceVertical = YES;
     textView.frame = self.view.bounds;
     textView.placeholder = @"发送新鲜事……";
@@ -72,12 +73,19 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     //接受表情键盘点击的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidSelect:) name:JCEmotionDidSelectNotification object:nil];
+    //接受表情键盘删除的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidDelete) name:JCEmotionDidDeleteNotification object:nil];
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 //设置导航栏
 -(void)setnavUp
 {
     self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(concle)];
-    self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:@selector(send)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:@selector(send)];
     
     self.navigationItem.rightBarButtonItem.enabled = NO;
     
@@ -101,7 +109,7 @@
     }else{
         self.title = prefix;
     }
-    
+
 }
 -(void)setupToolbar
 {
@@ -129,12 +137,11 @@
 -(void)emotionDidSelect:(NSNotification *)notification
 {
     JCEmotion *emotion = notification.userInfo[JCSelectEmotionKey];
-//    NSLog(@"%@ 被点中了",emotion.chs);
-    if (emotion.code) {
-        [self.textView insertText:emotion.code.emoji];
-    }else if(emotion.png){
-        
-    }
+    [self.textView insertEmotion:emotion];
+}
+-(void)emotionDidDelete
+{
+    [self.textView deleteBackward];
 }
 -(void)concle
 {
@@ -157,7 +164,7 @@
     //拼接请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [JCAccountTool account].access_token;
-    params[@"status"] = self.textView.text;
+    params[@"status"] = self.textView.fullText;
     //发送请求
     [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         UIImage *image = [self.photosView.photos firstObject];
@@ -186,7 +193,7 @@
     //拼接请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [JCAccountTool account].access_token;
-    params[@"status"] = self.textView.text;
+    params[@"status"] = self.textView.fullText;
     //发送请求
     [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [MBProgressHUD showMessage:@"发送成功"];
@@ -261,6 +268,7 @@
     }
     self.switchingKeyboard = YES;
     [self.textView endEditing:NO];
+    self.switchingKeyboard = NO;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //弹出键盘
         [self.textView becomeFirstResponder];

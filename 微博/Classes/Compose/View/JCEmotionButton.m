@@ -32,6 +32,7 @@
 -(void)setup
 {
     self.titleLabel.font = [UIFont systemFontOfSize:32];
+    //让hightlighted点击的时候按钮变灰失效
     self.adjustsImageWhenHighlighted = NO;
 }
 
@@ -44,5 +45,6 @@
         [self setTitle:emotion.code.emoji forState:UIControlStateNormal];
         
     }
+
 }
 @end

@@ -12,9 +12,8 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emoticon_keyboard_magnifier" translatesAutoresizingMaskIntoConstraints="NO" id="TqL-P9-z8k" userLabel="背景">
                     <rect key="frame" x="0.0" y="0.0" width="64" height="91"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKt-0d-ARW" customClass="JCEmotionButton">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKt-0d-ARW" userLabel="表情按钮" customClass="JCEmotionButton">
                     <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                 </button>
             </subviews>

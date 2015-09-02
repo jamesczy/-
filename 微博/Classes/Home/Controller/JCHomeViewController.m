@@ -79,12 +79,12 @@
 {
     //添加刷新控件
     UIRefreshControl *control = [[UIRefreshControl alloc]init];
-    [control addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
+    [control addTarget:self action:@selector(loadNewStatus:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:control];
     //马上进入刷新状态
     [control beginRefreshing];
     //马上加载数据
-    [self refreshStateChange:control];
+    [self loadNewStatus:control];
     
 }
 //上拉显示更多的老数据
@@ -115,8 +115,7 @@
         [self.tableView reloadData];
         //结束刷新
         self.tableView.tableFooterView.hidden = YES;
-        //显示最新微博的数量
-        [self showNewStatusCount:newStatuses.count];
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //        JCLog(@"请求失败－－>%@",error);
         self.tableView.tableFooterView.hidden = YES;
@@ -163,8 +162,7 @@
         [self.tableView reloadData];
         //结束刷新
         [control endRefreshing];
-        //显示最新微博的数量
-        [self showNewStatusCount:newStatuses.count];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //        JCLog(@"请求失败－－>%@",error);
         [control endRefreshing];
@@ -234,7 +232,9 @@
         //刷新表格
         [self.tableView reloadData];
         //结束刷新
-        
+        [control endRefreshing];
+        //显示最新微博的数量
+        [self showNewStatusCount:newStatuses.count];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //        JCLog(@"请求失败－－>%@",error);
     }];

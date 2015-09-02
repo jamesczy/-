@@ -54,7 +54,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"测试数据－－－－－》%ld",indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"测试数据－－－－－》%ld",indexPath.row];
 
     return cell;
 }

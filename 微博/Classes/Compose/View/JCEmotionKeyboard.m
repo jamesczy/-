@@ -13,6 +13,7 @@
 #import "JCConst.h"
 #import "JCEmotion.h"
 #import "MJExtension.h"
+#import "JCEmotionTool.h"
 
 @interface JCEmotionKeyboard()<JCEmotionTabBarDelegate>
 @property (nonatomic ,weak)JCEmotionTabBar *tabbar;
@@ -30,16 +31,17 @@
 
 -(JCEmotionListView *)recentListView
 {
-    if (!_recentListView) {
+    if (!_recentListView) {//最近
         self.recentListView = [[JCEmotionListView alloc]init];
-//        _recentListView.backgroundColor = JCRandomColor;
+        //加载沙盒中的数据
+        self.recentListView.emotions = [JCEmotionTool recentEmotions];
     }
     return _recentListView;
 }
 
 -(JCEmotionListView *)defaultListView
 {
-    if (!_defaultListView) {
+    if (!_defaultListView) {//默认
         self.defaultListView = [[JCEmotionListView alloc]init];
         NSString *path = [[NSBundle mainBundle]pathForResource:@"EmotionIcons/default/info.plist" ofType:nil];
         self.defaultListView.emotions = [JCEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
@@ -50,7 +52,7 @@
 
 -(JCEmotionListView *)emojiListView
 {
-    if (!_emojiListView) {
+    if (!_emojiListView) {//emoji
         self.emojiListView = [[JCEmotionListView alloc]init];
         NSString *path = [[NSBundle mainBundle]pathForResource:@"EmotionIcons/emoji/info.plist" ofType:nil];
         self.emojiListView.emotions = [JCEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
@@ -61,11 +63,10 @@
 
 -(JCEmotionListView *)lxhListView
 {
-    if (!_lxhListView) {
+    if (!_lxhListView) {//浪小花
         self.lxhListView = [[JCEmotionListView alloc]init];
         NSString *path = [[NSBundle mainBundle]pathForResource:@"EmotionIcons/lxh/info.plist" ofType:nil];
         self.lxhListView.emotions = [JCEmotion objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
-//        self.lxhListView.backgroundColor = JCRandomColor;
         
     }
     return _lxhListView;
@@ -83,10 +84,21 @@
         tabbar.delegate = self;
         [self addSubview:tabbar];
         self.tabbar = tabbar;
+        //表情选中的通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidSelect) name:JCEmotionDidSelectNotification object:nil];
     }
     return  self;
+    
 }
 
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+-(void)emotionDidSelect
+{
+    self.recentListView.emotions = [JCEmotionTool recentEmotions];
+}
 -(void)layoutSubviews
 {
     [super layoutSubviews];

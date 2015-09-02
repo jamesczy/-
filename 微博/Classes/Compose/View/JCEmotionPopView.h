@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class JCEmotion;
+@class JCEmotion,JCEmotionButton;
 
 @interface JCEmotionPopView : UIView
 +(instancetype)popView;
-@property (nonatomic ,strong)JCEmotion *emotion;
+-(void)showFrom:(JCEmotionButton *)button;
+
 @end
